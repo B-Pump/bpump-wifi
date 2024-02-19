@@ -17,5 +17,4 @@ def connect_to_wifi(ssid, password):
     print("Adresse IP:", wlan.ifconfig()[0])
 
 
-# Remplacez "nom_du_ssid" et "mot_de_passe" par les informations appropriées
 connect_to_wifi("nom_du_ssid", "mot_de_passe")
