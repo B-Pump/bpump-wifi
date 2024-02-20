@@ -3,7 +3,8 @@ from signal import pause
 
 def data_received(data):
     print(data)
-    s.send(data)
+    server.send(data)
 
-s = BluetoothServer(data_received)
+server = BluetoothServer(data_received)
+
 pause()

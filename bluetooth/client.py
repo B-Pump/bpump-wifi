@@ -4,7 +4,7 @@ from signal import pause
 def data_received(data):
     print(data)
 
-c = BluetoothClient("nameofyourserver", data_received)
-c.send("helloworld")
+client = BluetoothClient("name_of_your_server", data_received)
+client.send("helloworld")
 
 pause()

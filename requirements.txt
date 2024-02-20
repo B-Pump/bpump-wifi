@@ -1,4 +1,6 @@
 tqdm
 network
-qrtools
+qrcode
 bluedot
+pyzbar
+pillow
