@@ -1,6 +1,17 @@
 import socket
 import tqdm
 import os
+import qrcode
+
+def generate_qr_code(data):
+    qr = qrcode.QRCode(version=1, error_correction=qrcode.constants.ERROR_CORRECT_L, box_size=15, border=2)
+
+    qr.add_data(data)
+    qr.make(fit=True)
+    qr.make_image(fill_color="black", back_color="white").save("../data/qr_code.png")
+    print(data)
+
+    print("QR Code generated successfully")
 
 SERVER_HOST = "192.168.1.25"
 SERVER_PORT = 5001
@@ -25,9 +36,11 @@ def receive_file(client_socket):
             progress.update(len(bytes_read))
 
 def main():
+    generate_qr_code((str(SERVER_HOST) + "," + str(SERVER_PORT)))
     s = socket.socket()
 
     try:
+
         s.bind((SERVER_HOST, SERVER_PORT))
         s.listen(5)
         print(f"[*] Listening as {SERVER_HOST}:{SERVER_PORT}")
@@ -46,3 +59,5 @@ def main():
             
         s.close()
         print("[*] Server closed")
+
+main()
