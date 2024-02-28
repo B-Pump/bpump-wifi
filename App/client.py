@@ -5,6 +5,9 @@ from pyzbar.pyzbar import decode
 from PIL import Image
 import os
 
+SEPARATOR = "<SEPARATOR>"
+BUFFER_SIZE = 4096
+
 def read_qr_code(path):
     if os.path.exists(path):
         for obj in decode(Image.open(path)):
@@ -12,14 +15,6 @@ def read_qr_code(path):
             return obj.data.decode("utf-8")
     else:
         print("Image not found")
-
-SEPARATOR = "<SEPARATOR>"
-BUFFER_SIZE = 4096
-
-#host = "192.168.1.25"
-#port = 5001
-
-
 
 def send_file(filename):
     filesize = os.path.getsize(filename)
@@ -32,10 +27,10 @@ def send_file(filename):
             bytes_read = f.read(BUFFER_SIZE)
             if not bytes_read:
                 break
+
             s.sendall(bytes_read)
             progress.update(len(bytes_read))
 
-# Création de la socket
 with socket.socket() as s:
     host, port = read_qr_code("../data/qr_code.png").split(",", 2)
     print(host)
@@ -43,7 +38,7 @@ with socket.socket() as s:
 
     print(f"[+] Connecting to {host}:{port}")
     s.connect((host, int(port)))
-    print("[+] Connected.")
+    print("[+] Connected")
 
     file = "text.txt"
     send_file(file)
