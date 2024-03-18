@@ -8,12 +8,14 @@ def generate_qr_code(data):
 
     qr.add_data(data)
     qr.make(fit=True)
-    qr.make_image(fill_color="black", back_color="white").save("../data/qr_code.png")
+    qr.make_image(fill_color="black", back_color="white").save("./data/qr_code.png")
     print(data)
 
     print("QR Code generated successfully")
 
-SERVER_HOST = "192.168.1.25"
+SERVER_HOST_NAME = socket.gethostname()
+SERVER_HOST = socket.gethostbyname(SERVER_HOST_NAME) #"192.168.1.25"
+print(SERVER_HOST)
 SERVER_PORT = 5001
 
 BUFFER_SIZE = 4096

@@ -31,6 +31,7 @@ def send_file(filename):
             s.sendall(bytes_read)
             progress.update(len(bytes_read))
 
+
 with socket.socket() as s:
     host, port = read_qr_code("../data/qr_code.png").split(",", 2)
     print(host)
@@ -40,8 +41,7 @@ with socket.socket() as s:
     s.connect((host, int(port)))
     print("[+] Connected")
 
-    file = "text.txt"
-    send_file(file)
+    #file = "text.txt"
+    #send_file(file)
+    #print("[+] Transmission completed")
 
-
-print("[+] Transmission completed")
