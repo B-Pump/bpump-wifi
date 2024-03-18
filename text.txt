@@ -1,0 +1,129 @@
+Wiki Logo
+Ouvrir/Fermer la navigationmenu
+
+XWikiGuest
+arrow_forward Connexion
+Frantext
+homeDocumentation FrantextManuel d'utilisationListe de mots
+Liste de mots
+DANS CETTE PAGE
+Mes listes
+Ajouter un Mot ou une Expression régulière
+Ajouter une Flexion
+Ajouter une Expression CQL
+Sauvegarder la liste
+Exporter une liste
+Importer une liste
+Identifiant unique de la liste
+Actions sur la liste
+Listes prédéfinies
+Utiliser une liste
+La page Mes listes vous permet de créer, éditer et visualiser des listes de mots que vous pourrez utiliser dans les recherches assistées, les recherches avancées, les recherches de co-occurrences, les études de voisinages ou les grammaires grâce à leur identifiant id.
+
+La page Mes listes se décompose en 2 zones :
+
+la zone supérieure Mes listes contient vos créations
+la zone inférieure Listes prédéfinies contient des exemples de listes
+Si la page contient uniquement les noms des zones, sans aucun autre contenu visible, cliquez sur le titre de la zone afin d'en afficher le contenu.
+
+Mes listes
+La zone Mes listes vous permet de créer vos propres listes de mots. Celles-ci peuvent contenir des mots simples ou des suites de mots, mais également des expressions régulières, des flexions ou encore des expressions CQL. Vos listes sont personnelles et sont stockées dans votre compte si vous êtes authentifié, ou à défaut dans votre navigateur.
+
+Après avoir cliqué sur le bouton  add CRÉER UNE LISTE, saisissez le Nom* de la liste en moins de 30 caractères, ainsi qu'une Description (facultative) en moins de 140 caractères. Cliquez sur le bouton CRÉER en bas à droite de la fenêtre courante. La nouvelle page qui s'affiche vous permet d'ajouter des entrées à votre liste. Commencez par préciser pour chaque nouvelle entrée, s'il s'agit d'un Mot, d'un Expression régulière, d'une Flexion ou d'une Expression CQL.
+
+Ajouter un Mot ou une Expression régulière
+Saisissez un Mot ou une Expression régulière puis cliquez sur AJOUTER (ou la touche Entrée). Vous pouvez alors préciser si la recherche doit être Sensible à la casse (respecter les majuscules et minuscules) ou Sensible aux diacritiques (tenir compte des accents, cédilles, etc.). L'entrée peut également être ou non interprétée comme une Expression régulière. Enfin, vous avez toujours la possibilité de modifier ou clear Supprimer l'entrée si nécessaire.
+
+Pour aller plus loin, consultez la documentation des Expressions régulières et CQL dans Frantext.
+
+Ajouter une Flexion
+Choisissez un Lexique* parmi ceux disponibles depuis le menu déroulant (moderne, médiéval ou préclassique), puis saisissez un Lemme* et une Catégorie grammaticale si nécessaire, cette dernière n'étant pas obligatoire. Cliquez ensuite sur AJOUTER (ou la touche Entrée).
+
+Une boite de dialogue vous préviendra si le lemme spécifié ne retourne aucune flexion dans le lexique choisi. Lorsque des flexions sont disponibles, une nouvelle fenêtre vous permet de sélectionner les flexions à ajouter à la liste. Utilisez alors le champ Filtrer situé en haut de la zone afin de réduire la liste des flexions si nécessaire.
+
+Sélectionnez les lemmes puis cliquez sur le bouton AJOUTER situé en bas à droite de la zone de dialogue. Lorsque votre sélection concerne l'ensemble des flexions disponibles, une expression Frantext  &lexique(Lexique, Lemme, Catégorie) est ajoutée. Sinon, les mots sélectionnés sont ajoutés un à un dans votre liste en cours de constitution.
+
+Pour chaque mot ajouté, vous pouvez préciser si la recherche doit être Sensible à la casse (respecter les majuscules et minuscules) ou Sensible aux diacritiques (tenir compte des accents, cédilles, etc.). L'entrée peut également être ou non interprétée comme une Expression régulière. Enfin, vous avez toujours la possibilité de modifier ou clear Supprimer l'entrée si nécessaire.
+
+Pour aller plus loin, consultez la documentation des Flexions et des Expressions séquence.
+
+Ajouter une Expression CQL
+Saisissez une Expression CQL puis cliquez sur AJOUTER (ou la touche Entrée). Les variantes d'écriture (casse, diacritiques, expression régulières) doivent être spécifiées dans l'expression avec les symboles appropriés.
+
+Pour aller plus loin, consultez la documentation des Expressions CQL dans Frantext.
+
+Sauvegarder la liste
+Une fois que votre liste est constituée, cliquez sur le bouton save SAUVEGARDER situé en haut à droite de la page.
+
+Pour revenir sur la page d'administration des listes, cliquez sur la flèche arrow_back située en haut à gauche de l'intitulé de votre liste, ou sur l'onglet supérieur Mes listes depuis la barre supérieure de navigation.
+
+Exporter une liste
+Vous pouvez conserver la liste courante en dehors de l’interface de Frantext en cliquant sur le bouton get_app EXPORTER. Vous téléchargez alors un fichier CSV (valeurs séparées par des virgules) intitulé d’après le nom de votre liste. Ce fichier contient l’ensemble des requêtes qui constituent votre liste. Le fichier comprends une requête par ligne, et chaque requête est délimitée par des guillemets.
+
+Importer une liste
+Vous pouvez importer les requêtes issues d’un fichier CSV (valeurs séparées par des virgules) dans la liste courante en cliquant sur le bouton publish IMPORTER. La liste importée sera fusionnée avec la liste courante. Une fois le fichier importé, vous devrez cliquer sur le bouton save SAUVEGARDER pour prendre en compte les modifications (ajouts) dans la liste courante.
+
+Si vous avez créé une liste manuellement, attention à bien respecter la syntaxe des requêtes CQL. Sinon, vous risquez d’obtenir un message d’erreur lorsque vous utiliserez la liste.
+
+Identifiant unique de la liste
+Depuis la page d'administration Mes listes, un nouveau bloc correspondant à votre liste est disponible. Il affiche l'identifiant unique de la liste, ainsi que son nom et sa description. L'identifiant vous permettra d'exploiter la liste depuis la recherche assistée, la recherche avancée, les grammaires et les études de voisinages.
+
+Pour modifier l'identifiant de la liste, vous devez en modifier le nom depuis le bouton ACTIONS. L'identifiant est généré automatiquement à partir du nom de la liste.
+
+Pour aller plus loin, consultez la documentation des Expressions de séquence.
+
+Actions sur la liste
+Depuis la partie inférieure du bloc correspondant à votre liste, deux boutons sont disponibles. Le bouton  ÉDITER vous permet de continuer à modifier le contenu de votre liste. Le bouton ACTIONS vous permet de :
+
+edit  Éditer le nom et la description de la liste
+content_copy  Dupliquer la liste
+get_app  Exporter la grammaire
+delete  Supprimer la liste
+search  Rechercher avec la liste
+Listes prédéfinies
+Des listes de mots ont étés prédéfinies à titre d'exemples :
+
+une liste de couleurs
+une liste de jours de la semaine
+une liste de mois de l'année
+Les listes prédéfinies sont communes à l'ensemble des utilisateurs.
+
+En cliquant sur le bouton VOIR d'une liste prédéfinie, vous pouvez parcourir son contenu.
+Le bouton ACTIONS d'une liste prédéfinie vous permet de la content_copy Dupliquer ou de search Rechercher avec cette liste.
+
+Il n'est pas possible de modifier directement une liste prédéfinie, mais vous pouvez la dupliquer. Pour dupliquer une liste, cliquez sur le bouton Dupliquer correspondant, puis dans la nouvelle fenêtre, nommez votre liste avant de cliquer sur le bouton CRÉER situé en bas à droite.
+Vous pouvez alors modifier la liste à loisir, avant de l'enregistrer en cliquant sur le bouton save SAUVEGARDER situé en haut à droite de la page.
+
+Pour revenir sur la page d'administration des listes, cliquez sur la flèche arrow_back située en haut à gauche de l'intitulé de votre liste, ou sur l'onglet supérieur Mes listes depuis la barre supérieure de navigation.
+
+Utiliser une liste
+Une fois votre liste créée, notez bien son identifiant id situé en haut de la zone correspondante. C'est grâce à lui que vous pourrez utiliser la liste dans une recherche assistée, une recherche avancée, une grammaire ou une étude de voisinage :
+
+Recherche assistée : Cliquez sur les doubles flèches swap_vert situées en haut à droite, puis choisissez Utiliser une liste de mots. Cliquez ensuite dans le menu Liste* et sélectionnez l'id de votre liste.
+Recherche avancée et Grammaire : Utilisez une expression de séquence respectant la syntaxe &liste("id") ou id correspond à l'identifiant de votre liste.
+Étude de voisinage : Cliquez dans le menu Liste* et sélectionnez l'id de votre liste.
+Pour aller plus loin, consultez la documentation de la recherche et des grammaires.
+
+Tags : liste de mots liste créer ajouter sauvegarder supprimer actions manuel Importer Exporter v1.3.10
+Modifié par Gilles Toubiana le 2020/11/23 11:42
+Rechercher...
+Navigation
+Documentation Frantext
+Actualités
+Informations générales
+Informations scientifiques et techniques
+Manuel d'utilisation
+Connexion
+Corpus
+Expressions
+Grammaires
+L'interface utilisateur
+Liste de mots
+Recherche
+Questions fréquentes (FAQ)
+Tutoriels
+
+Connexion - Documentation - Manuel - Tutoriels - FAQ - Abonnement
+Frantext - ATILF (CNRS/UL) - 2018-2024
+
+Logo CNRS   Logo ATILF   Logo Université de Lorraine

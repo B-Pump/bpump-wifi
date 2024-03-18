@@ -33,7 +33,7 @@ def send_file(filename):
 
 
 with socket.socket() as s:
-    host, port = read_qr_code("../data/qr_code.png").split(",", 2)
+    host, port = read_qr_code("./data/qr_code.png").split(",", 2)
     print(host)
     print(port)
 
@@ -41,7 +41,26 @@ with socket.socket() as s:
     s.connect((host, int(port)))
     print("[+] Connected")
 
-    #file = "text.txt"
+    while True:
+        exoselected = str(input(f"""{"="*40}
+    1. Pompe
+    2. Abdo
+{"="*40}
+Exo: """))
+        s.send(f"exo;{exoselected}".encode())
+        
+        while True:
+            received = s.recv(BUFFER_SIZE).decode()
+            title, response = received.split(";")
+            if response == "finished":
+                print("Exo finished!")
+                break
+            else:
+                print("Wrong!")
+
+
+
+    #file = "./App/text.txt"
     #send_file(file)
     #print("[+] Transmission completed")
 

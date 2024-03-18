@@ -2,6 +2,7 @@ import socket
 import tqdm
 import os
 import qrcode
+import time
 
 def generate_qr_code(data):
     qr = qrcode.QRCode(version=1, error_correction=qrcode.constants.ERROR_CORRECT_L, box_size=15, border=2)
@@ -41,25 +42,28 @@ def main():
     generate_qr_code((str(SERVER_HOST) + "," + str(SERVER_PORT)))
     s = socket.socket()
 
-    try:
+    s.bind((SERVER_HOST, SERVER_PORT))
+    s.listen(5)
+    print(f"[*] Listening as {SERVER_HOST}:{SERVER_PORT}")
 
-        s.bind((SERVER_HOST, SERVER_PORT))
-        s.listen(5)
-        print(f"[*] Listening as {SERVER_HOST}:{SERVER_PORT}")
+    client_socket, address = s.accept()
+    print(f"[+] {address} is connected")
 
-        client_socket, address = s.accept()
-        print(f"[+] {address} is connected")
+    #receive_file(client_socket)
 
-        receive_file(client_socket)
+    while True:
+        received = client_socket.recv(BUFFER_SIZE).decode()
+        print(received)
+        
+        title, exoselected = received.split(";")
+        print(exoselected)
 
-    except Exception as e:
-        print(f"[-] Error : {e}")
+        time.sleep(2)
 
-    finally:
-        if 'client_socket' in locals():
-            client_socket.close()
-            
-        s.close()
-        print("[*] Server closed")
+        client_socket.send("exo;finished".encode())
+        
+
+
+print("[*] Server closed")
 
 main()
